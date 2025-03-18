@@ -1,0 +1,17 @@
+# Виртуальное окружение Python
+.venv/
+venv/
+
+# Временные файлы Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Локальные данные
+data/raw_mis/*
+data/processed_csv/*
+
+
+# Логи и другие временные файлы
+*.log
