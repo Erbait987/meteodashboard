@@ -15,3 +15,6 @@ data/processed_csv/*
 
 # Логи и другие временные файлы
 *.log
+
+
+.env

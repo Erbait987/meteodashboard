@@ -6,16 +6,16 @@ services:
       - ./data/raw_mis:/app/data/raw_mis
       - ./data/processed_csv:/app/data/processed_csv
     environment:
-      - POSTGRES_HOST=db
-      - POSTGRES_PORT=5432
-      - POSTGRES_DB=weather_data
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=lion2266
-      - FTP_SERVER=178.216.209.185
-      - FTP_PORT=47855
-      - FTP_USER=Hydras
-      - FTP_PASS=Ott_user
-      - FTP_DIR=/path_1
+      - POSTGRES_HOST
+      - POSTGRES_PORT
+      - POSTGRES_DB
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - FTP_SERVER
+      - FTP_PORT
+      - FTP_USER
+      - FTP_PASS
+      - FTP_DIR
     depends_on:
       - db
     restart: unless-stopped
@@ -23,9 +23,9 @@ services:
   db:
     image: postgres:15
     environment:
-      - POSTGRES_DB=weather_data
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=lion2266
+      - POSTGRES_DB
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:
@@ -36,12 +36,12 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - MB_DB_TYPE=postgres
-      - MB_DB_DBNAME=weather_data
-      - MB_DB_PORT=5432
-      - MB_DB_USER=postgres
-      - MB_DB_PASS=lion2266
-      - MB_DB_HOST=db
+      - MB_DB_TYPE
+      - MB_DB_DBNAME
+      - MB_DB_PORT
+      - MB_DB_USER
+      - MB_DB_PASS
+      - MB_DB_HOST
     depends_on:
       - db
     restart: unless-stopped
